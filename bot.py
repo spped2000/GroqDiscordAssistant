@@ -19,7 +19,7 @@ BOT_TOKEN = os.getenv("DISCORD_TOKEN")
 BOT_PREFIX = os.getenv("BOT_PREFIX", "!")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "llama3-70b-8192"
+DEFAULT_MODEL = "llama3-8b-8192"
 MAX_RESPONSE_LENGTH = 2000
 
 # Constants
