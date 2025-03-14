@@ -7,9 +7,9 @@
 A Discord bot that integrates with Groq's LLM API to provide AI-powered question answering and assistance. Users can interact with different AI models through mentions or commands, maintaining conversation context across interactions. Now with vision capabilities to analyze images!
 
 ## 🚀 Quick Links
-- [⭐ Star this repo](https://github.com/spped2000/GroqDiscordAssistant/stargazers) if you find it useful!
-- [🍴 Fork this repo](https://github.com/spped2000/GroqDiscordAssistant/fork) to create your own version!
-- [📝 Report issues](https://github.com/spped2000/GroqDiscordAssistant/issues) if you find any bugs
+- [⭐ Star this repo](https://github.com/spped2000/GroqDiscordAssistant/stargazers) เพื่อเป็นกำลังใจให้ผู้พัฒนา!
+- [🍴 Fork this repo](https://github.com/spped2000/GroqDiscordAssistant/fork) เพื่อนำไปพัฒนาต่อ!
+- [📝 Report issues](https://github.com/spped2000/GroqDiscordAssistant/issues) ถ้าเจอข้อผิดพลาดหรือบัค
 
 ## How It Works
 ```mermaid
