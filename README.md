@@ -66,7 +66,7 @@ Attach an image and mention the bot with your question about the image:
 @YourBot [image attached] What's in this image?
 ```
 
-![Bot Vision Example](assets/vision_example.png)
+![Bot Vision Example](assets/exp2.png)
 *Example: A user attaches an image and asks the bot about it*
 
 ### Commands
