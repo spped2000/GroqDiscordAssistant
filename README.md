@@ -1,15 +1,15 @@
 # Groq Discord Bot
 
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/groq-discord-bot?style=social)](https://github.com/yourusername/groq-discord-bot/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/yourusername/groq-discord-bot?style=social)](https://github.com/yourusername/groq-discord-bot/fork)
+[![GitHub Stars](https://img.shields.io/github/stars/spped2000/GroqDiscordAssistant?style=social)](https://github.com/spped2000/GroqDiscordAssistant/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/spped2000/GroqDiscordAssistant?style=social)](https://github.com/spped2000/GroqDiscordAssistant/fork)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A Discord bot that uses Groq's API to access powerful AI language models like LLama 3 and Mixtral directly in your Discord server. Now with vision capabilities to analyze images!
+A Discord bot that integrates with Groq's LLM API to provide AI-powered question answering and assistance. Users can interact with different AI models through mentions or commands, maintaining conversation context across interactions. Now with vision capabilities to analyze images!
 
 ## 🚀 Quick Links
-- [⭐ Star this repo](https://github.com/yourusername/groq-discord-bot/stargazers) if you find it useful!
-- [🍴 Fork this repo](https://github.com/yourusername/groq-discord-bot/fork) to create your own version!
-- [📝 Report issues](https://github.com/yourusername/groq-discord-bot/issues) if you find any bugs
+- [⭐ Star this repo](https://github.com/spped2000/GroqDiscordAssistant/stargazers) if you find it useful!
+- [🍴 Fork this repo](https://github.com/spped2000/GroqDiscordAssistant/fork) to create your own version!
+- [📝 Report issues](https://github.com/spped2000/GroqDiscordAssistant/issues) if you find any bugs
 
 ## How It Works
 ```mermaid
