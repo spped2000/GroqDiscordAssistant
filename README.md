@@ -43,7 +43,7 @@ flowchart LR
 ### Installation
 1. **Clone or download this repository**
    ```bash
-   git clone [https://github.com/yourusername/groq-discord-bot.git](https://github.com/spped2000/GroqDiscordAssistant.git)
+   git clone [https://github.com/spped2000/GroqDiscordAssistant.git]
    cd GroqDiscordAssistant
    ```
 2. **Install dependencies**
