@@ -59,6 +59,32 @@ Just mention the bot with your question:
 @YourBot What's the capital of France?
 ```
 
+![Bot Usage Example](assets/exp1.png)
+*Example: A user mentions the bot to ask a question, and the bot responds with information from the AI model.*
+
+### Text Chat Examples
+
+#### General Knowledge Queries
+You can ask the bot general knowledge questions:
+```
+@YourBot Who wrote the novel "Pride and Prejudice"?
+@YourBot What are the main causes of climate change?
+```
+
+#### Using Different Models
+Specify a model for different types of responses:
+```
+!groq "Explain quantum computing in simple terms" model:llama3-70b-8192
+!groq "Write a short poem about technology" model:mixtral-8x7b-32768
+```
+
+#### Complex Tasks
+The bot can handle more complex tasks as well:
+```
+@YourBot Can you summarize the key differences between machine learning and deep learning?
+@YourBot How would you explain the concept of blockchain to a 10-year-old?
+```
+
 ### NEW: Vision Capabilities
 
 Attach an image and mention the bot with your question about the image:
