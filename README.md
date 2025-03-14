@@ -60,7 +60,7 @@ Just mention the bot with your question:
 ```
 
 ![Bot Usage Example](assets/exp1.png)
-*Example: @ตื่นมาโค้ดpython แนะนำอาหารไทยเผ็ดๆหน่อย?
+*Example: @ตื่นมาโค้ดpython แนะนำอาหารไทยเผ็ดๆหน่อย?*
 
 ### Text Chat Examples
 
@@ -93,6 +93,7 @@ Attach an image and mention the bot with your question about the image:
 ```
 
 ![Bot Vision Example](assets/exp2.png)
+
 *Example: @ตื่นมาโค้ดpython วัดนี้คือวัดอะไร?*
 
 ### Commands
