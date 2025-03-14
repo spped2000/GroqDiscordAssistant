@@ -22,7 +22,7 @@ flowchart LR
 ## Features
 
 - Ask AI questions by mentioning the bot
-- **NEW**: Analyze images by attaching them to your messages
+- **NEW**: Analyze images by attaching them to your messages (14/3/2025)
 - Choose from multiple AI models, including vision models
 - Simple command interface
 - Handles long responses automatically
