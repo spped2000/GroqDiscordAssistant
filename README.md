@@ -64,13 +64,15 @@ Just mention the bot with your question:
 ```
 ![Bot Usage Example](assets/exp1.png)
 *Example: @ตื่นมาโค้ดpython แนะนำอาหารไทยเผ็ดๆหน่อย?*
-```
+
 ### Weather Information
 Ask the bot about the weather in any location:
 ```
+@YourBot What's the weather in Bangkok?
+```
 Or use the dedicated weather command:
 ```
-@ตื่นมาโค้ดpython !weather bangkok
+!weather Bangkok
 ```
 
 ![Weather Example](assets/example_weather.png)
