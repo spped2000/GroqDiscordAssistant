@@ -67,9 +67,7 @@ Just mention the bot with your question:
 
 ### Weather Information
 Ask the bot about the weather in any location:
-```
-@YourBot What's the weather in Bangkok?
-```
+
 Or use the dedicated weather command:
 ```
 !weather Bangkok
@@ -144,8 +142,6 @@ The bot uses PydanticAI with Groq LLM to create a powerful weather agent that:
 ```
 !weather Bangkok
 !weather Tokyo, Paris, New York
-@YourBot What's the weather like in London today?
-@YourBot Is it raining in Seattle?
 ```
 
 ## Vision Examples
