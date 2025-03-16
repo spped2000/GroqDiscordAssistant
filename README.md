@@ -12,20 +12,7 @@ A Discord bot that integrates with Groq's LLM API to provide AI-powered question
 - [📝 Report issues](https://github.com/spped2000/GroqDiscordAssistant/issues) ถ้าเจอข้อผิดพลาดหรือบัค
 
 ## How It Works
-```mermaid
-flowchart LR
-    A[User sends message] --> B{Bot mentioned\nor command used?}
-    B -->|No| Z[Ignore]
-    B -->|Yes| C[Process input]
-    C --> C1{Contains image?}
-    C1 -->|No| D1[Send to Groq Text API]
-    C1 -->|Yes| D2[Send to Groq Vision API]
-    D1 --> E{API response\nsuccessful?}
-    D2 --> E
-    E -->|No| F[Send error message]
-    E -->|Yes| G[Format response]
-    G --> H[Send to Discord]
-```
+![Bot Workflow](assets/bot_weather.png)
 
 ## Features
 - Ask AI questions by mentioning the bot
