@@ -68,15 +68,13 @@ Just mention the bot with your question:
 ### Weather Information
 Ask the bot about the weather in any location:
 ```
-@YourBot What's the weather in Bangkok?
-```
 Or use the dedicated weather command:
 ```
-!weather Tokyo, New York, London
+@ตื่นมาโค้ดpython !weather bangkok
 ```
 
 ![Weather Example](assets/example_weather.png)
-*Example: Getting weather information for multiple cities*
+*Example: @ตื่นมาโค้ดpython !weather bangkok*
 
 ### Text Chat Examples
 #### General Knowledge Queries
