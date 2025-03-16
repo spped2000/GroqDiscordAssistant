@@ -12,7 +12,11 @@ A Discord bot that integrates with Groq's LLM API to provide AI-powered question
 - [📝 Report issues](https://github.com/spped2000/GroqDiscordAssistant/issues) ถ้าเจอข้อผิดพลาดหรือบัค
 
 ## How It Works
-![Bot Workflow](assets/bot_weather.png)
+<p align="center">
+  <a href="https://www.kaggle.com/learn" target="_blank">
+    <img src="https://raw.githubusercontent.com/spped2000/GroqDiscordAssistant/main/assets/bot_weather.png" alt="Kaggle Logo" width="1200"/>
+  </a>
+</p>
 
 ## Features
 - Ask AI questions by mentioning the bot
