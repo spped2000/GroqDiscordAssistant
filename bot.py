@@ -5,9 +5,21 @@ import base64
 import re
 from typing import Optional, List, Union, Dict, Any
 import os
+import hikari
+import lightbulb
+import aiohttp
+import base64
+import re
+from typing import Optional, List, Union, Dict, Any
+import os
+import asyncio  
 from dotenv import load_dotenv
 
-# Import our Groq-powered PydanticAI weather agent
+from groq import Groq
+import weather_agent
+
+from dotenv import load_dotenv
+
 import weather_agent
 
 load_dotenv()
@@ -22,7 +34,7 @@ bot = lightbulb.BotApp(
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 DEFAULT_MODEL = "llama3-70b-8192"  # Updated to newer model
-DEFAULT_VISION_MODEL = "llama-3.1-8b-vision"  # Using Llama 3.1 for vision
+DEFAULT_VISION_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"  # Using Llama 3.1 for vision
 
 async def fetch_image(url: str) -> Optional[bytes]:
     """
@@ -40,75 +52,64 @@ async def fetch_image(url: str) -> Optional[bytes]:
         print(f"Exception when fetching image: {e}")
         return None
 
+from groq import Groq
+
+# Initialize Groq SDK client
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+
 async def query_groq(
     prompt: str, 
     model: str = DEFAULT_MODEL,
     image_urls: List[str] = None
 ) -> Optional[str]:
     """
-    Send a query to the Groq API and return the response.
-    Support both text-only and image+text queries.
+    Use Groq Python SDK to query a model with optional image support.
     """
-    headers = {
-        "Authorization": f"Bearer {GROQ_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
-    # Prepare messages for the API call
-    messages = []
-    
-    # If there are image URLs, process them for vision models
-    if image_urls and ("vision" in model):
-        message_content: List[Dict[str, Any]] = []
-        
-        # Add the text prompt as the first content item
-        message_content.append({
+    try:
+        # Prepare message content
+        content_blocks: List[Dict[str, Any]] = []
+
+        # Add text prompt
+        content_blocks.append({
             "type": "text",
             "text": prompt
         })
-        
-        # Process each image URL and add to content
-        for url in image_urls:
-            image_data = await fetch_image(url)
-            if image_data:
-                # Convert image to base64
-                base64_image = base64.b64encode(image_data).decode('utf-8')
-                
-                # Add image content
-                message_content.append({
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/jpeg;base64,{base64_image}"
-                    }
-                })
-        
-        # Create the final message with combined content
-        messages.append({"role": "user", "content": message_content})
-    else:
-        # Text-only message
-        messages.append({"role": "user", "content": prompt})
-    
-    payload = {
-        "model": model,
-        "messages": messages,
-        "temperature": 0.7,
-        "max_tokens": 1024
-    }
-    
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.post(GROQ_API_URL, headers=headers, json=payload) as response:
-                if response.status == 200:
-                    result = await response.json()
-                    return result["choices"][0]["message"]["content"]
-                else:
-                    print(f"Error from Groq API: {response.status}")
-                    error_text = await response.text()
-                    print(error_text)
-                    return None
+
+        # Add images if any (only applies to vision models)
+        if image_urls:
+            for url in image_urls:
+                image_data = await fetch_image(url)
+                if image_data:
+                    base64_image = base64.b64encode(image_data).decode("utf-8")
+                    content_blocks.append({
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}"
+                        }
+                    })
+
+        # Prepare the message
+        messages = [{
+            "role": "user",
+            "content": content_blocks if image_urls else prompt
+        }]
+
+        # Query Groq SDK
+        response = await asyncio.to_thread(
+            client.chat.completions.create,
+            model=model,
+            messages=messages,
+            temperature=0.7,
+            max_completion_tokens=1024,
+            top_p=1,
+            stream=False
+        )
+
+        return response.choices[0].message.content
     except Exception as e:
-        print(f"Exception when calling Groq API: {e}")
+        print(f"Error querying Groq SDK: {e}")
         return None
+
 
 @bot.listen(hikari.GuildMessageCreateEvent)
 async def on_message_create(event: hikari.GuildMessageCreateEvent) -> None:
